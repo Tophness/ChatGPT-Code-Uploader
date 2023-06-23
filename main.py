@@ -3,7 +3,7 @@ import sys
 import tkinter as tk
 from tkinter import filedialog
 import tkinter.ttk as ttk
-from openai_loader import OpenAILoader
+from OpenAIAPIGrabber.chat import OpenAIChat
 import codecs
 from tkhtmlview import HTMLLabel
 import markdown
@@ -24,10 +24,10 @@ def iterate_js_files(directory, output_filename, output_type, file_types, prepen
             window.clipboard_clear()
             window.clipboard_append(output_text)
         elif(output_type == "prompt"):
-            loader = OpenAILoader()
-            chatResult = loader.start(output_text)
+            chat = OpenAIChat()
+            chatResult = chat.start(output_text)
             if(not chatResult):
-                chatResult = loader.start(output_text, True)
+                chatResult = chat.start(output_text, True)
             result_text.set_html(markdown.markdown(codecs.decode(str(chatResult).encode(), "unicode_escape")))
         else:
             with open(output_filename, "w") as output_file:
