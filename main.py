@@ -26,8 +26,6 @@ def iterate_js_files(directory, output_filename, output_type, file_types, prepen
         elif(output_type == "prompt"):
             chat = OpenAIChat()
             chatResult = chat.start(output_text)
-            if(not chatResult):
-                chatResult = chat.start(output_text, True)
             result_text.set_html(markdown.markdown(codecs.decode(str(chatResult).encode(), "unicode_escape")))
         else:
             with open(output_filename, "w") as output_file:
