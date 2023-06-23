@@ -26,13 +26,13 @@ Firefox (Untested):
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/Tophness/ChatGPTCodeUploader.git
+   git clone https://github.com/Tophness/ChatGPT-Code-Uploader.git
    ```
 
 2. Change to the project directory:
 
    ```shell
-   cd ChatGPTCodeUploader
+   cd ChatGPT-Code-Uploader
    ```
 
 3. Install the prerequisite Python libraries:
